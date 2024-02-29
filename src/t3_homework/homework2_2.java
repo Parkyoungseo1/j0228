@@ -8,7 +8,7 @@ import java.util.Scanner;
  여기서 두개의 숫자는 임의의 숫자를 입력할수 있기에 첫번째숫자가 더 큰 숫자가 먼저 입력될수도 있다.
  */
 
-public class homework2 {
+public class homework2_2 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int su1, su2, tot=0, temp=0, cnt=0, total=0, startsu;
@@ -34,12 +34,16 @@ public class homework2 {
 			
 			if(cnt % 5 == 0) {
 				System.out.println(temp + "~" + su1 + ":" + tot);
+				total += tot;
 				tot = 0;
 				temp = su1 +1;
 			}
 			su1++;
 		}
-		if(cnt % 5 !=0) System.out.println(temp + "~" + --su1 + ":" + tot);
+		if(cnt % 5 !=0) {
+			total += tot;
+			System.out.println(temp + "~" + --su1 + ":" + tot);
+		}
 		System.out.println("총합 ("+startsu+"~"+su2+") : " + total);
 		
 		sc.close();
